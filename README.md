@@ -5,6 +5,6 @@ A collection of tests that i am doing on the awesome pbrt v4 library. I expect t
 ## SimpleScene
 The first test i did is to render a simple pbrt scene file but by using my own C++ code in Windows in VisualStudio 2022 in Win32 console application. That is I am calling the pbrt library functions from the libpbrt.lib file that is generated from the pbrt library. The source code is shared in SimpleScene folder. Open the VisualStudio2022 solution and adjust the pbrt library root folders appropriately.
 ## Output
-![SimpleScene](/SimpleScene/SimpleScene.png)
+![SimpleScene](./SimpleScene/SimpleScene/simple.png)
 
 
