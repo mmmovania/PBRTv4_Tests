@@ -34,6 +34,5 @@ int main()
 
     CleanupPBRT();
 
-
     return 0;
 } 

@@ -104,14 +104,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>E:\Codes\Github\pbrt-v4\src\;E:\Codes\Github\pbrt-v4\src\ext\openvdb\nanovdb;$(CUDA_PATH)\include;.;E:\Codes\Github\pbrt-v4\src\ext\glfw\include;E:\Codes\Github\pbrt-v4\src\ext\zlib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(PBRT_ROOT)\src\;$(PBRT_ROOT)\src\ext\openvdb\nanovdb;$(CUDA_PATH)\include;.;$(PBRT_ROOT)\src\ext\glfw\include;$(PBRT_ROOT)\src\ext\zlib</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>libpbrt_d.lib;E:\Codes\Github\pbrt-v4\build\src\ext\openexr\OpenEXR\IlmImf\Debug\IlmImf-2_5_d.lib;E:\Codes\Github\pbrt-v4\build\src\ext\openexr\IlmBase\Imath\Debug\Imath-2_5_d.lib;E:\Codes\Github\pbrt-v4\build\src\ext\openexr\IlmBase\Half\Debug\Half-2_5_d.lib;E:\Codes\Github\pbrt-v4\build\src\ext\zlib\Debug\zlibstatic_d.lib;E:\Codes\Github\pbrt-v4\build\src\ext\ptex\src\ptex\Debug\Ptex_d.lib;E:\Codes\Github\pbrt-v4\build\src\ext\libdeflate\Debug\deflate_d.lib;E:\Codes\Github\pbrt-v4\build\src\ext\double-conversion\Debug\double-conversion_d.lib;cuda.lib;E:\Codes\Github\pbrt-v4\build\src\ext\utf8proc\Debug\utf8proc_static_d.lib;E:\Codes\Github\pbrt-v4\build\src\ext\glfw\src\Debug\glfw3_d.lib;E:\Codes\Github\pbrt-v4\build\src\ext\glad\Debug\glad_d.lib;opengl32.lib;pbrt_embedded_ptx_lib_d.lib;dbghelp.lib;wsock32.lib;ws2_32.lib;E:\Codes\Github\pbrt-v4\build\src\ext\openexr\IlmBase\IexMath\Debug\IexMath-2_5_d.lib;E:\Codes\Github\pbrt-v4\build\src\ext\openexr\IlmBase\IlmThread\Debug\IlmThread-2_5_d.lib;E:\Codes\Github\pbrt-v4\build\src\ext\openexr\IlmBase\Iex\Debug\Iex-2_5_d.lib;cudadevrt.lib;cudart_static.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>E:\Codes\Github\pbrt-v4\build\Debug\;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.0\lib\x64</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(PBRT_BUILD_ROOT)\Debug\;$(CUDA_PATH)\lib\x64</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -122,7 +122,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>E:\Codes\Github\pbrt-v4\src\;E:\Codes\Github\pbrt-v4\src\ext\openvdb\nanovdb;$(CUDA_PATH)\include;.;E:\Codes\Github\pbrt-v4\src\ext\glfw\include;E:\Codes\Github\pbrt-v4\src\ext\zlib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(PBRT_ROOT)\src\;$(PBRT_ROOT)\src\ext\openvdb\nanovdb;$(CUDA_PATH)\include;.;$(PBRT_ROOT)\src\ext\glfw\include;$(PBRT_ROOT)\src\ext\zlib</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -130,12 +130,14 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>E:\Codes\Github\pbrt-v4\build\Release\;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.0\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(PBRT_BUILD_ROOT)\Release\;$(CUDA_PATH)\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>libpbrt.lib;E:\Codes\Github\pbrt-v4\build\src\ext\openexr\OpenEXR\IlmImf\Release\IlmImf-2_5.lib;E:\Codes\Github\pbrt-v4\build\src\ext\openexr\IlmBase\Imath\Release\Imath-2_5.lib;E:\Codes\Github\pbrt-v4\build\src\ext\openexr\IlmBase\Half\Release\Half-2_5.lib;E:\Codes\Github\pbrt-v4\build\src\ext\zlib\Release\zlibstatic.lib;E:\Codes\Github\pbrt-v4\build\src\ext\ptex\src\ptex\Release\Ptex.lib;E:\Codes\Github\pbrt-v4\build\src\ext\libdeflate\Release\deflate.lib;E:\Codes\Github\pbrt-v4\build\src\ext\double-conversion\Release\double-conversion.lib;cuda.lib;E:\Codes\Github\pbrt-v4\build\src\ext\utf8proc\Release\utf8proc_static.lib;E:\Codes\Github\pbrt-v4\build\src\ext\glfw\src\Release\glfw3.lib;E:\Codes\Github\pbrt-v4\build\src\ext\glad\Release\glad.lib;opengl32.lib;pbrt_embedded_ptx_lib.lib;dbghelp.lib;wsock32.lib;ws2_32.lib;E:\Codes\Github\pbrt-v4\build\src\ext\openexr\IlmBase\IexMath\Release\IexMath-2_5.lib;E:\Codes\Github\pbrt-v4\build\src\ext\openexr\IlmBase\IlmThread\Release\IlmThread-2_5.lib;E:\Codes\Github\pbrt-v4\build\src\ext\openexr\IlmBase\Iex\Release\Iex-2_5.lib;cudadevrt.lib;cudart_static.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SimpleScene.cpp" />
+    <ClCompile Include="SimpleScene.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
