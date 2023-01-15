@@ -14,7 +14,7 @@ The source code is shared in SimpleScene folder. First, setup two environment va
 I have added a more advanced sample to setup the renderer without the .pbrt scene file. Note that this might not be the best way to setup the pbrt renderer but I was able to dig it through the pbrt BasicSceneBuilder.cpp file and just called the functions as the PBRT::parser was doing. Until the pbrt v4 official book or tutorials are shared, I guess this is how you would go about rendering your scene using just c++ code without the need for the .pbrt scene file. The code compiles fine and gives the exact same output as SimpleScene.cpp.
 
 ## Code snapshot
-'''
+```
 // SimpleScene.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 #define _CRT_SECURE_NO_WARNINGS 
@@ -274,6 +274,6 @@ int main()
 
     return 0;
 }
-'''
+```
 ## Output
 ![SimpleScene](./SimpleScene/SimpleScene/simple.png)
