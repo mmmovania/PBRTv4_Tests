@@ -6,6 +6,47 @@ A collection of tests that i am doing on the awesome pbrt v4 library. I expect t
 The first test i did is to render a simple pbrt scene file but by using my own C++ code in Windows in VisualStudio 2022 in Win32 console application. That is I am calling the pbrt library functions from the libpbrt.lib file that is generated from the pbrt library. 
 
 The source code is shared in SimpleScene folder. First, setup two environment variables: PBRT_ROOT which points to the root folder of PBRTv4 and PBRT_BUILD_ROOT which points to the root folder of the PBRTv4 build folder where your VisualStudio2022 solution of PBRTv4 resides. Once you have the two environment variables setup, please log out and then log in again to ensure that the environment variables are updated. Then, open the VisualStudio2022 solution and press the build button. If all goes well, you should see a glass sphere on a checkered plane rendered.
+## Code snapshot
+```
+// SimpleScene.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+#define _CRT_SECURE_NO_WARNINGS 
+
+#include <iostream>
+
+#define PBRT_HAS_INTRIN_H
+#define PBRT_IS_WINDOWS
+#define PBRT_BUILD_GPU_RENDERER
+
+#include <pbrt/pbrt.h>
+#include <pbrt/scene.h> 
+
+#include <pbrt/wavefront/wavefront.h>
+
+using namespace pbrt;
+
+int main()
+{
+    std::vector<std::string> filenames;
+    filenames.push_back("./scenes/simple_scene.pbrt");
+
+    PBRTOptions options;
+    options.useGPU = true;
+    options.interactive = true;
+
+    InitPBRT(options);
+
+    BasicScene scene;
+    BasicSceneBuilder builder(&scene);
+    ParseFiles(&builder, filenames);
+
+    RenderWavefront(scene);
+
+    CleanupPBRT();
+
+    return 0;
+} 
+```
 
 ## Output
 ![SimpleScene](./SimpleScene/SimpleScene/simple.png)
