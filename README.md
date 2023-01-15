@@ -15,7 +15,7 @@ I have added a more advanced sample to setup the renderer without the .pbrt scen
 
 ## Code snapshot
 ```
-// SimpleScene.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// AdvancedScene.cpp : Shows how to call pbrt v4 functions to setup the scene
 //
 #define _CRT_SECURE_NO_WARNINGS 
 
